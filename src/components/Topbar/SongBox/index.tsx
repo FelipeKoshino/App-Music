@@ -1,21 +1,8 @@
 import { SongsData } from "../../../interfaces/SongsData";
 import { ListSongs, ContentBox, ChordBox } from "../styles";
-import useFetchPerson from "../useFetchPerson"
-
-const url = 'https://api.genius.com/songs';
 
 export function SongBox(value: { songs: SongsData[]; busca: string; }
   ) {
-const {isError, isLoading, dataly} = useFetchPerson(url)
-
-if (isLoading) {
-  return <h2>Loading...</h2>;
-}
-if (isError) {
-  return <h2>There was an error...</h2>;
-}
-console.log(dataly)
-//const { } = dataly;
 
   return <ListSongs>
         {value.songs.filter(item => {
